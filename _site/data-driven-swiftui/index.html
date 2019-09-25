@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>You’re up and running! | The Mental Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="You’re up and running!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below)." />
+<meta property="og:description" content="Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below)." />
+<link rel="canonical" href="http://localhost:4000/blog/data-driven-swiftui/" />
+<meta property="og:url" content="http://localhost:4000/blog/data-driven-swiftui/" />
+<meta property="og:site_name" content="The Mental Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-25T00:00:00+02:00" />
+<script type="application/ld+json">
+{"datePublished":"2019-09-25T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/data-driven-swiftui/"},"url":"http://localhost:4000/blog/data-driven-swiftui/","description":"Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).","headline":"You’re up and running!","dateModified":"2019-09-25T00:00:00+02:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="The Mental Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">The Mental Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">You&#39;re up and running!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-09-25T00:00:00+02:00" itemprop="datePublished">Sep 25, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).</p>
+
+<p><img src="/blog/images/config.png" alt="_config.yml" /></p>
+
+<p>The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the <a href="https://github.com/barryclark/jekyll-now">Jekyll Now repository</a> on GitHub.</p>
+
+<p>SwiftUI has set us all thinking about the future of development on Apple’s platforms. It’s a disruptive technology which will supersede a development stack dating back more than 20 years to the pre-Mac OS X era. It’s disruptive to be sure, but is it disruptive enough? While we’re at it, should we be pulling the plug on a few more of our mainstays?</p>
+
+<p>Even with SwiftUI in constant flux, there is already plenty of great content around for learning  the new framework. I’ve spent several weeks working on side projects in an effort to ‘kick the tires’; the tutorials and API descriptions others have compiled have been indespensible. And yet, I can’t help feeling it’s all code that is fully clothed above the waist, but pantless below. The king is only half dressed. There is a enormous, data-model-sized elephant in the SwiftUI room.</p>
+
+<p>Most SwiftUI examples rely heavily on the <code class="highlighter-rouge">@State</code> property wrapper. This is a convenient way to include some mutable state without having to think much about the controllers and data models which make up the state of a real app. This is fully understandable, because the framework is so new, and we are still fixated with how to handle animation, layout, and a multitude of other UI concerns. But recently, I’ve started to focus on the next step: How do you go from the tutorials and demos to real world, scalable apps? How do you build a SwiftUI app from the ground up?</p>
+
+<h2 id="structs-atop-classes">Structs atop Classes</h2>
+
+<p>One of the most perplexing aspects of the situation as it stands is that we have a framework for UI which is built around value types — <code class="highlighter-rouge">View</code> structs — while being encouraged to use reference types for our model. Model types are still typically represented by classes, and Apple’s own solution for data storage, Core Data, is firmly established in the realm of reference types.</p>
+
+<p>This feels upside down to me. If I were to choose to use value types in either model or view, I would be inclined to pick the model first. In fact, in the app <a href="https://agenda.com">Agenda</a>, we took exactly this approach: the model is made up of value types, and the view utilizes standard AppKit/UIKit, <em>ie</em>, classes.</p>
+
+<h2 id="values-all-the-way-down">Values All the Way Down</h2>
+
+<p>Of course, one need not exclude the other. Maybe the best solution is to use value types in both the view <em>and</em> the model. It’s this option I want to explore in the rest of the post. But I want to take it a step further, not only using value types throughout an app, but using immutable data throughout, right down to the on disk store.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in [.hi] {
+}
+</code></pre></div></div>
+
+
+  </div><a class="u-url" href="/blog/data-driven-swiftui/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Mental Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">The Mental Blog</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.twitter.com/drewmccormack"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">drewmccormack</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Drew McCormack is the developer behind agenda.com, studiesapp.com, and ensembles.io</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
