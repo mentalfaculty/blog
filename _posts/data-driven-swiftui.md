@@ -1,3 +1,15 @@
+---
+layout: post
+title: You're up and running!
+---
+
+Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+
+![_config.yml]({{ site.baseurl }}/images/config.png)
+
+The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+
+
 SwiftUI has set us all thinking about the future of development on Apple's platforms. It's a disruptive technology which will supersede a development stack dating back more than 20 years to the pre-Mac OS X era. It's disruptive to be sure, but is it disruptive enough? While we're at it, should we be pulling the plug on a few more of our mainstays?
 
 Even with SwiftUI in constant flux, there is already plenty of great content around for learning  the new framework. I've spent several weeks working on side projects in an effort to 'kick the tires'; the tutorials and API descriptions others have compiled have been indespensible. And yet, I can't help feeling it's all code that is fully clothed above the waist, but pantless below. The king is only half dressed. There is a enormous, data-model-sized elephant in the SwiftUI room.

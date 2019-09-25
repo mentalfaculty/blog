@@ -1,1 +1,29 @@
+name: The Mental Blog
 theme: jekyll-theme-architect
+description: Drew McCormack is the developer behind agenda.com, studiesapp.com, and ensembles.io
+footer-links:
+  twitter: drewmccormack
+url: https://mentalfaculty.github.io
+baseurl: "/blog"
+permalink: /:title/
+version: v1.2.0
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+gems:
+  - jekyll-sitemap
+  - jekyll-feed 
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
