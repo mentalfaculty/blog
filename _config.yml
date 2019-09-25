@@ -1,2 +1,8 @@
 title: Macanics
 theme: jekyll-theme-architect
+description:
+  Drew McCormack develops agenda.com, studiesapp.com, and ensembles.io.
+footer-links:
+  twitter: drewmccormack
+twitter_username: drewmccormack
+permalink: /:title/
